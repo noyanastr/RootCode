@@ -311,17 +311,28 @@ footer {
     .container-1 {
         flex-direction: column;
         text-align: center;
+        
     }
-
+   .container-1 #mail{
+    font-size: 17px;
+   }
+   .container-1 #formlink{
+    font-size: 17px;
+   }
     .container-1 a {
         cursor: default;
         text-align: center;
+        
+        
     }
     .container-1 p {
         display: block;
     margin-left: auto;
     margin-right: auto;
     min-width: 300px;
+    font-size: 17px;
+    text-align: justify;
+    padding-right: 15px;
     
         
     }
