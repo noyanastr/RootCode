@@ -55,6 +55,7 @@ body {
   font-weight:bold;
   color: #2e7d32;
   position: relative;
+  padding: 12px;
 }
 
 .nav-links a {
@@ -366,4 +367,5 @@ footer {
 
 p {
   color: white;
+
 }
