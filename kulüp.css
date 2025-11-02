@@ -58,9 +58,10 @@ body {
 
 .logo {
   font-size: 25px;
-  font-weight: bold;
+  font-weight:bold;
   color: #2e7d32;
   position: relative;
+  padding: 12px;
 }
 
 .nav-links a {
@@ -77,10 +78,14 @@ body {
 }
 
 .menu-icon {
-  display: none;
+ display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
+  margin-right: 0px;
+  position: absolute;
+  right: 5%;
+  padding: 20px;
 }
 
 .menu-icon span {
@@ -408,5 +413,6 @@ p {
   color: #0071f2;
   font-weight: 550;
   font-size: 30px;
+
 
 }
