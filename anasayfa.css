@@ -3,6 +3,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("arkaplanolucak.png"); 
+  background-size: cover;        
+  background-repeat: no-repeat;  
+  background-position: center;   
+  background-attachment: fixed;  
+  font-family: Arial, sans-serif;
+  
+  text-align: center;
+}
 
 .fade-in-paragraph {
   opacity: 0;
@@ -18,10 +30,7 @@
   filter: blur(0);
 }
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #080041;
-}
+
 
 #ikiust {
   opacity: 0%;
@@ -40,13 +49,13 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 2.5rem 6rem;
-  background-color: rgba(3, 12, 91, 0.85);
+  background-color: #00000078;
   /* eski rengi white'dı */
   position: sticky;
   top: 0;
   z-index: 10;
 
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.595);
 
 }
 
@@ -68,7 +77,7 @@ body {
 }
 
 .nav-links a:hover {
-  color: #ff0000;
+  color: #1dd594fe;
 }
 
 .menu-icon {
@@ -86,7 +95,7 @@ body {
 .menu-icon span {
   height: 3px;
   width: 25px;
-  background: #6feef5;
+  background: #00aab3;
   transition: all 0.3s ease;
 }
 
@@ -97,7 +106,7 @@ body {
   width: 75%;
   max-width: 300px;
   height: 100vh;
-  background: rgb(1, 6, 51);
+  background: #191919;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -114,20 +123,21 @@ body {
 .mobile-menu a {
   text-decoration: none;
   color: #ffffff;
+  text-align: left;
   font-size: 1.1rem;
   transition: color 0.3s ease;
   font-weight: 450;
 }
 
 .mobile-menu a:hover {
-  color: #ff0000;
+  color: #1dd594fe;
 }
 
 .close-btn {
   font-size: 3rem;
   align-self: flex-end;
   cursor: pointer;
-  color: #6feef5;
+  color: #00aab3;
 }
 
 .navbar img {
@@ -152,8 +162,10 @@ body {
   width: 45%;
   min-width: 300px;
   padding-left: 20px;
-  text-align: justify;
+  text-align: left;
+  line-height: 25px;
   font-size: 20px;
+  word-spacing: 4px;
 }
 
 .container-1 img {
@@ -175,8 +187,10 @@ body {
 .container-2 p {
   width: 45%;
   min-width: 300px;
+  word-spacing: 4px;
   padding-right: 20px;
-  text-align: justify;
+  text-align: left;
+  line-height: 25px;
   font-size: 20px;
 }
 
@@ -188,7 +202,7 @@ body {
 
 .container-1 a {
   text-decoration: none;
-  color: #0071f2;
+  color: #d4d4d4;
   font-weight: 550;
   font-size: 30px;
  
@@ -196,7 +210,7 @@ body {
 
 .container-2 a {
   text-decoration: none;
-  color: #0071f2;
+  color: #d4d4d4;
   font-weight: 550;
   font-size: 30px;
 }
@@ -222,6 +236,7 @@ footer {
 .footer-section {
   flex: 1 1 200px;
   margin: 20px;
+  text-align: left;
 }
 
 .footer-section h3 {
@@ -321,7 +336,7 @@ footer {
   .container-1 img {
     width: 100%;
     min-width: 300px;
-    border-radius: 20px;
+    border-radius: 5px;
   }
 
   /**/
@@ -341,7 +356,9 @@ footer {
     width: 100%;
     min-width: 300px;
     gap: 20px;
-    border-radius: 20px;
+    border-radius: 5px;
+    order: -1;
+
   }
 
   .footer-container {
@@ -354,6 +371,9 @@ footer {
   }
 
   .container-3 {
+    opacity: 0%;
+  }
+  .üstresim2{
     opacity: 0%;
   }
 }
@@ -372,4 +392,12 @@ footer {
 
 p {
   color: white;
+}
+#ustust{
+  opacity: 50%;
+}
+.üstresim2{
+  position: absolute;
+  left: 0px;
+  top: 0px;
 }
