@@ -12,7 +12,6 @@ body {
   background-position: center;   
   background-attachment: fixed;  
   font-family: Arial, sans-serif;
-  
   text-align: center;
 }
 
@@ -50,7 +49,7 @@ body {
   align-items: center;
   padding: 2.5rem 6rem;
   background-color: #00000078;
-  /* eski rengi white'dı */
+  
   position: sticky;
   top: 0;
   z-index: 10;
