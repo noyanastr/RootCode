@@ -5,9 +5,16 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #080041;
+  margin: 0;
+  padding: 0;
+  background-image: url("arkaplanolucak.png"); /* resmin dosya adı */
+  background-size: cover;        /* ekranı tam kapla */
+  background-repeat: no-repeat;  /* tekrar etme */
+  background-position: center;   /* ortala */
+  background-attachment: fixed;  /* kaydırınca sabit kalsın */
+  font-family: Arial, sans-serif;
   
+  text-align: center;
 }
 .fade-in-paragraph {
   opacity: 0;
@@ -24,6 +31,8 @@ body {
 }
 #ikiust {
   opacity: 100%;
+  width: 30%;
+  padding-top: 30px;
 }
 
 #takımlar {
@@ -46,8 +55,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 2.5rem 6rem;
-  background-color: rgba(3, 12, 91, 0.85);
-  /* eski rengi white'dı */
+  background-color: #00000078;
+  
   position: sticky;
   top: 0;
   z-index: 10;
@@ -58,7 +67,7 @@ body {
 
 .logo {
   font-size: 25px;
-  font-weight:bold;
+  font-weight: bold;
   color: #2e7d32;
   position: relative;
   padding: 12px;
@@ -74,11 +83,11 @@ body {
 }
 
 .nav-links a:hover {
-  color: #ff0000;
+  color: #2e7d32;
 }
 
 .menu-icon {
- display: none;
+  display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
@@ -91,7 +100,7 @@ body {
 .menu-icon span {
   height: 3px;
   width: 25px;
-  background: #6feef5;
+  background: #00aab3;
   transition: all 0.3s ease;
 }
 
@@ -102,7 +111,7 @@ body {
   width: 75%;
   max-width: 300px;
   height: 100vh;
-  background: rgb(1, 6, 51);
+  background: #191919;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -122,17 +131,18 @@ body {
   font-size: 1.1rem;
   transition: color 0.3s ease;
   font-weight: 450;
+  text-align: left;
 }
 
 .mobile-menu a:hover {
-  color: #ff0000;
+  color: #1dd594fe;
 }
 
 .close-btn {
   font-size: 3rem;
   align-self: flex-end;
   cursor: pointer;
-  color: #6feef5;
+  color: #00aab3;
 }
 
 .navbar img {
@@ -148,7 +158,8 @@ body {
   justify-content: center;
   gap: 20px;
   /* Resim ve yazı arası boşluk */
-  padding: 40px;
+  padding-top: 0px;
+  padding: px;
   flex-wrap: wrap;
   /* Küçük ekranlarda alt alta geçsin */
 
@@ -158,7 +169,7 @@ body {
   width: 45%;
   min-width: 300px;
   padding-left: 20px;
-  text-align: center;
+  text-align: left;
   font-size: 20px;
   display: block;
   margin-left: auto;
@@ -191,7 +202,9 @@ body {
   width: 45%;
   min-width: 300px;
   padding-right: 20px;
-  text-align: justify;
+  text-align: left;
+  word-spacing: 4px;
+  line-height: 25px;
   font-size: 20px;
 }
 
@@ -203,7 +216,7 @@ body {
 
 .container-1 a {
   text-decoration: none;
-  color: #0071f2;
+  color: #d3d3d3;
   font-weight: 550;
   font-size: 30px;
   cursor:default;
@@ -211,7 +224,7 @@ body {
 
 .container-2 a {
   text-decoration: none;
-  color: #0071f2;
+  color: #d3d3d3;
   font-weight: 550;
   font-size: 30px;
   cursor: default;
@@ -238,6 +251,7 @@ footer {
 .footer-section {
   flex: 1 1 200px;
   margin: 20px;
+  text-align: left;
 }
 
 .footer-section h3 {
@@ -275,7 +289,7 @@ footer {
 }
 
 .footer-bottom {
-  text-align: center;
+  text-align: justify;
   padding-top: 20px;
   border-top: 1px solid #333;
   color: #aaa;
@@ -305,11 +319,13 @@ footer {
   #ikiust {
     opacity: 100%;
     position: relative;
+    width: 100%;
   }
 
   .container-1 {
     flex-direction: column;
     text-align: center;
+    
   }
   .container-1 a{
     cursor: default;
@@ -324,11 +340,13 @@ footer {
     width: 60%;
     min-width: 300px;
     border-radius: 20px;
+    
   }
 
   /**/
   .container-2 {
     flex-direction: column;
+    padding-top: 25px;
   }
 
   .container-2 p {
@@ -361,6 +379,18 @@ footer {
 
   #takımlar {
     width: 70%;
+  }
+  
+  #ctfüst{
+    order: -1;
+    border-radius: 5px;
+  }
+  #oyunüst{
+    order: -1;
+    border-radius: 5px;
+  }
+  #yapayzekakenar{
+    border-radius: 5px;
   }
 
 }
@@ -413,6 +443,5 @@ p {
   color: #0071f2;
   font-weight: 550;
   font-size: 30px;
-
 
 }
