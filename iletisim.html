@@ -40,19 +40,104 @@
     <div class="container-1">
         <br>
         <img src="iletişim.png" id="ikiust">
-        <div class="container-1">
+        
 
-            <p class="fade-in-paragraph"> Topluluk hakkında soru, görüş ve önerileriniz için <a href="#"
-                    class="font" id="mail">rootcode@gmail.com</a> üzerinden bizlerle iletişime geçebilirsiniz. <br><br>Topluluğa üye
-                alımları için <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSftZPxfu1Ccz9ScMbNT8Uv51heN3ma5uczWcTDvSqkJMYl7Sw/viewform?pli=1"
-                    id="formlink">formu</a> doldurunuz. <br> Kulüp Başkanı : Emir Gazi YILDIRIM <br><a href="#"
-                    class="font" id="mail">emirgaziyildirim@gmail.com</a></p><br> 
-            <img src="logosayfa.png" class="fade-in-section">
+            <p class="fade-in-paragraph">Soru, görüş ve önerileriniz için <a 
+                    class="font" id="mail"> rootcodeteknoloji@gmail.com</a> <br>  </p> 
+           <br> <br>
+           <div class="iletişimtablosu">
+                <table>
+                    <caption style="font-weight: bolder;" class="cizgi">Topluluk İletişim Bilgileri</caption>
+                    
+                    <tbody class="tbody">
+                        <tr>
+                            <td style="font-weight: bolder;">Topluluk Başkanı</td>
+                            <td >Emir Gazi YILDIRIM</td>
+                            
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bolder;">E-posta</td>
+                            <td > emirgazii9453@gmail.com</td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+<!--2.tablo-->  
+                <div class="iletişimtablosu">
+                <table>
+                    <caption style="font-weight: bolder;" class="cizgi">Site Bilgileri</caption>
+                    
+                    <tbody class="tbody">
+                        <tr >
+                            <td style="font-weight: bolder;" >WEB Site Yöneticisi</td>
+                            <td >Fatih YİĞİT</td>
+                            
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bolder;">E-posta</td>
+                            <td >fathyigit3652@gmail.com</td>
+                            
+                        </tr>
+                    </tbody>
+                </table> 
+                
+           </div>  
 
 
-        </div>
-    </div>
+        
+    </div> 
+<div class="form-container">
+    <h2>Üyelik Formu</h2>
+    <p class="form-info">Lütfen gerçek bilgilerinizi giriniz.</p>
+
+    <form id="memberForm">
+
+        <label>Ad Soyad</label>
+        <input type="text" id="name" placeholder="Ad Soyad giriniz" required>
+
+        <label>Telefon Numarası</label>
+        <input type="tel" id="phone" placeholder="0 5xx xxx xx xx" required>
+
+        <label>Öğrenci Numarası</label>
+        <input type="text" id="student" placeholder="Öğrenci numaranızı girin" required>
+
+        <label>E-posta</label>
+        <input type="email" id="email" placeholder="örnek@mail.com" required>
+
+        <button type="submit">Başvuruyu Gönder</button>
+    </form>
+
+    <p id="statusMessage"></p>
+</div>
+
+<script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbw3HEbI44Swx85y9FVMfYDW8UgWl6HWHQksabVCNIHEqaKp4Pf_3-roO-U5Ew5IIyGCQA/exec";
+
+    document.getElementById("memberForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const formData = new FormData();
+        formData.append("ad_soyad", document.getElementById("name").value);
+        formData.append("telefon", document.getElementById("phone").value);
+        formData.append("email", document.getElementById("email").value);
+        formData.append("ogrenci_no", document.getElementById("student").value);
+
+        fetch(scriptURL, {
+            method: "POST",
+            body: formData
+        })
+        .then(() => {
+            document.getElementById("statusMessage").innerText = "Başvurunuz başarıyla kaydedildi!";
+            document.getElementById("statusMessage").style.color = "green";
+            document.getElementById("memberForm").reset();
+        })
+        .catch(() => {
+            document.getElementById("statusMessage").innerText = "Bir hata oluştu, lütfen tekrar deneyin.";
+            document.getElementById("statusMessage").style.color = "red";
+        });
+    });
+</script>
+
 
 
     <!--
@@ -97,5 +182,3 @@
 </body>
 
 </html>
-
-
