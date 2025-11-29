@@ -5,25 +5,26 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.rootcodetechnology.com/</loc>
+    <loc>https://rootcodetechnology.com/</loc>
     <priority>1.0</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.rootcodetechnology.com/hackerlab.html</loc>
+    <loc>https://rootcodetechnology.com/hackerlab.html</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
     </url>
   <url>
-    <loc>https://www.rootcodetechnology.com/kul%C3%BCp.html</loc>
+    <loc>https://rootcodetechnology.com/kul%C3%BCp.html</loc>
     <priority>0.5</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.rootcodetechnology.com/iletisim.html</loc>
+    <loc>https://rootcodetechnology.com/iletisim.html</loc>
     <priority>0.5</priority>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>
+
 
 
