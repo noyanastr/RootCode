@@ -1,30 +1,28 @@
-<?xml version="1.0" encoding="UFT-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://noyanastr.github.io/RootCode/</loc>
-    <priority>1.0</priority>
-  </url>
+
   <url>
     <loc>https://rootcodetechnology.com/</loc>
     <priority>1.0</priority>
     <changefreq>monthly</changefreq>
   </url>
+
   <url>
     <loc>https://rootcodetechnology.com/hackerlab.html</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
-    </url>
+  </url>
+
   <url>
-    <loc>https://rootcodetechnology.com/kul%C3%BCp.html</loc>
+    <loc>https://rootcodetechnology.com/kulüp.html</loc>
     <priority>0.5</priority>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
     <loc>https://rootcodetechnology.com/iletisim.html</loc>
     <priority>0.5</priority>
     <changefreq>weekly</changefreq>
   </url>
+
 </urlset>
-
-
-
