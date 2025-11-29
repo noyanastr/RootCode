@@ -63,3 +63,31 @@ document.addEventListener('DOMContentLoaded', () => {
     images.forEach(img => imgObserver.observe(img));
   }
 });
+const scriptURL = "https://script.google.com/macros/s/AKfycbw3HEbI44Swx85y9FVMfYDW8UgWl6HWHQksabVCNIHEqaKp4Pf_3-roO-U5Ew5IIyGCQA/exec";
+
+document.getElementById("memberForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("ad_soyad", document.getElementById("name").value);
+    formData.append("telefon", document.getElementById("phone").value);
+    formData.append("email", document.getElementById("email").value);
+    formData.append("ogrenci_no", document.getElementById("student").value);
+
+    fetch(scriptURL, {
+        method: "POST",
+        mode: "no-cors",   // 🔥 EN ÖNEMLİ SATIR (BUNSUZ HATA GELİR)
+        body: formData
+    })
+    .then(() => {
+        document.getElementById("statusMessage").innerText = "Başvurunuz başarıyla kaydedildi!";
+        document.getElementById("statusMessage").style.color = "green";
+        document.getElementById("memberForm").reset();
+    })
+    .catch(() => {
+        document.getElementById("statusMessage").innerText = "Bir hata oluştu, lütfen tekrar deneyin.";
+        document.getElementById("statusMessage").style.color = "red";
+    });
+});
+
+
