@@ -110,34 +110,8 @@
     <p id="statusMessage"></p>
 </div>
 
-<script>
-    const scriptURL = "https://script.google.com/macros/s/AKfycbwMN094P76KM1DwYitNHn2ZgiG6C3Imbkib7S82aUPnS-1-zLmbp_zUOKjyN3cUl9Eo_w/exec";
 
-    document.getElementById("memberForm").addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        const formData = new FormData();
-        formData.append("ad_soyad", document.getElementById("name").value);
-        formData.append("telefon", document.getElementById("phone").value);
-        formData.append("email", document.getElementById("email").value);
-        formData.append("ogrenci_no", document.getElementById("student").value);
-
-        fetch(scriptURL, {
-            method: "POST",
-            body: formData
-        })
-        .then(() => {
-            document.getElementById("statusMessage").innerText = "Başvurunuz başarıyla kaydedildi!";
-            document.getElementById("statusMessage").style.color = "green";
-            document.getElementById("memberForm").reset();
-        })
-        .catch(() => {
-            document.getElementById("statusMessage").innerText = "Bir hata oluştu, lütfen tekrar deneyin.";
-            document.getElementById("statusMessage").style.color = "red";
-        });
-    });
-</script>
-
+        
 
 
     <!--
@@ -182,5 +156,6 @@
 </body>
 
 </html>
+
 
 
