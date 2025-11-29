@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.rootcodetechnology.com/sitemap.xml
-Host: https://www.rootcodetechnology.com
+Sitemap: https://rootcodetechnology.com/sitemap.xml
+Host: https://rootcodetechnology.com
+
+
+
