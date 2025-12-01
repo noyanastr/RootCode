@@ -63,32 +63,33 @@ document.addEventListener('DOMContentLoaded', () => {
     images.forEach(img => imgObserver.observe(img));
   }
 });
-const scriptURL = "https://script.google.com/macros/s/AKfycbzgc7JzDYJacbKYKuBw2XucjgZUCGdL8vmv6O1zuhjLVu2tOlTn2kgUsPJnaUKC6aV0oQ/exec";
-
-document.getElementById("memberForm").addEventListener("submit", function(e) {
+document.getElementById("memberForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append("ad_soyad", document.getElementById("name").value);
-    formData.append("telefon", document.getElementById("phone").value);
-    formData.append("email", document.getElementById("email").value);
-    formData.append("ogrenci_no", document.getElementById("student").value);
+    const data = {
+        name: document.getElementById("name").value,
+        phone: document.getElementById("phone").value,
+        student: document.getElementById("student").value,
+        email: document.getElementById("email").value
+    };
 
-    fetch(scriptURL, {
+    fetch("WEB_APP_URL_HERE", {
         method: "POST",
-        mode: "no-cors",   // 🔥 EN ÖNEMLİ SATIR (BUNSUZ HATA GELİR)
-        body: formData
+        body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json"
+        }
     })
-    .then(() => {
-        document.getElementById("statusMessage").innerText = "Başvurunuz başarıyla kaydedildi!";
-        document.getElementById("statusMessage").style.color = "green";
-        document.getElementById("memberForm").reset();
-    })
-    .catch(() => {
-        document.getElementById("statusMessage").innerText = "Bir hata oluştu, lütfen tekrar deneyin.";
-        document.getElementById("statusMessage").style.color = "red";
-    });
+        .then(res => res.json())
+        .then(response => {
+            document.getElementById("statusMessage").innerText = "Başvurunuz başarıyla iletildi!";
+        })
+        .catch(error => {
+            document.getElementById("statusMessage").innerText = "Bir hata oluştu!";
+        });
 });
+
+
 
 
 
