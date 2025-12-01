@@ -63,31 +63,37 @@ document.addEventListener('DOMContentLoaded', () => {
     images.forEach(img => imgObserver.observe(img));
   }
 });
-document.getElementById("memberForm").addEventListener("submit", function (e) {
+document.getElementById("memberForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
     const data = {
-        name: document.getElementById("name").value,
-        phone: document.getElementById("phone").value,
-        student: document.getElementById("student").value,
-        email: document.getElementById("email").value
+        ad_soyad: document.getElementById("name").value,
+        telefon: document.getElementById("phone").value,
+        email: document.getElementById("email").value,
+        ogrenci_no: document.getElementById("student").value
     };
 
-    fetch("https://script.google.com/macros/s/AKfycbw0AjwA2yT1aAfCTFliqRZIwTigAe7PHbWaVnoIQVzTf6xcieY_Y4bF5oo5I6X8KAqlZw/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbw0AjwA2yT1aAfCTF1iqRZIwTigAe7PHbWaVnoIQVzTf6xcieY_Y4bF5oo5I6X8KAqlZw/exec", {
         method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json"
+        body: JSON.stringify(data) 
+    })
+    .then(res => res.text())
+    .then(result => {
+        if (result === "OK") {
+            document.getElementById("statusMessage").textContent = "Başarılı!";
+            document.getElementById("statusMessage").style.color = "lime";
+            document.getElementById("memberForm").reset();
+        } else {
+            document.getElementById("statusMessage").textContent = "Bir hata oluştu: " + result;
+            document.getElementById("statusMessage").style.color = "red";
         }
     })
-        .then(res => res.json())
-        .then(response => {
-            document.getElementById("statusMessage").innerText = "Başvurunuz başarıyla iletildi!";
-        })
-        .catch(error => {
-            document.getElementById("statusMessage").innerText = "Bir hata oluştu!";
-        });
+    .catch(err => {
+        document.getElementById("statusMessage").textContent = "Bağlantı hatası!";
+        document.getElementById("statusMessage").style.color = "red";
+    });
 });
+
 
 
 
