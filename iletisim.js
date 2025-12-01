@@ -73,9 +73,9 @@ document.getElementById("memberForm").addEventListener("submit", function(e) {
         ogrenci_no: document.getElementById("student").value
     };
 
-    fetch("https://script.google.com/macros/s/AKfycbw0AjwA2yT1aAfCTF1iqRZIwTigAe7PHbWaVnoIQVzTf6xcieY_Y4bF5oo5I6X8KAqlZw/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbxyPQlVcKZUN17tCdhN2YItqgHjXXUlnOn7HQUh5q8WzTM1Gb6-ZE9DJpSm7k0q6x9IxQ/exec", {
         method: "POST",
-        body: JSON.stringify(data) 
+        body: JSON.stringify(data)
     })
     .then(res => res.text())
     .then(result => {
@@ -93,6 +93,7 @@ document.getElementById("memberForm").addEventListener("submit", function(e) {
         document.getElementById("statusMessage").style.color = "red";
     });
 });
+
 
 
 
