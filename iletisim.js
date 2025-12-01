@@ -73,7 +73,7 @@ document.getElementById("memberForm").addEventListener("submit", function (e) {
         email: document.getElementById("email").value
     };
 
-    fetch("AKfycbw0AjwA2yT1aAfCTFliqRZIwTigAe7PHbWaVnoIQVzTf6xcieY_Y4bF5oo5I6X8KAqlZw", {
+    fetch("https://script.google.com/macros/s/AKfycbw0AjwA2yT1aAfCTFliqRZIwTigAe7PHbWaVnoIQVzTf6xcieY_Y4bF5oo5I6X8KAqlZw/exec", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -88,6 +88,7 @@ document.getElementById("memberForm").addEventListener("submit", function (e) {
             document.getElementById("statusMessage").innerText = "Bir hata oluştu!";
         });
 });
+
 
 
 
