@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     images.forEach(img => imgObserver.observe(img));
   }
 });
-const scriptURL = "https://script.google.com/macros/s/AKfycbyEvliAOf4SsIT1OGmIhhQn5k7efUWPAEvJl_LT56izaW7kXyc5KTBhZBlM5nFwYQlJ_A/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbzgc7JzDYJacbKYKuBw2XucjgZUCGdL8vmv6O1zuhjLVu2tOlTn2kgUsPJnaUKC6aV0oQ/exec";
 
 document.getElementById("memberForm").addEventListener("submit", function(e) {
     e.preventDefault();
@@ -89,6 +89,7 @@ document.getElementById("memberForm").addEventListener("submit", function(e) {
         document.getElementById("statusMessage").style.color = "red";
     });
 });
+
 
 
 
