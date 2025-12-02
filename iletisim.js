@@ -74,25 +74,16 @@ document.getElementById("memberForm").addEventListener("submit", function(e) {
     };
 
     fetch("https://script.google.com/macros/s/AKfycbw89zLqxNVijt6yPBqykCzMe7vZVDqdnP6NDcG1ifc7vV2x1GnzHz6oRnO9B2Dpfk_3pg/exec", {
-        method: "POST",
-        body: JSON.stringify(data)
-    })
-    .then(res => res.text())
-    .then(result => {
-        if (result === "OK") {
-            document.getElementById("statusMessage").textContent = "Başarılı!";
-            document.getElementById("statusMessage").style.color = "lime";
-            document.getElementById("memberForm").reset();
-        } else {
-            document.getElementById("statusMessage").textContent = "Bir hata oluştu: " + result;
-            document.getElementById("statusMessage").style.color = "red";
-        }
-    })
-    .catch(err => {
-        document.getElementById("statusMessage").textContent = "Bağlantı hatası!";
-        document.getElementById("statusMessage").style.color = "red";
-    });
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(data)
+})
+.then(r => r.text())
+.then(txt => console.log("Response:", txt))
+.catch(err => console.error("Fetch error:", err));
+
 });
+
 
 
 
