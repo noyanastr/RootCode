@@ -73,7 +73,7 @@ document.getElementById("memberForm").addEventListener("submit", function(e) {
         ogrenci_no: document.getElementById("student").value
     };
 
-    fetch("https://script.google.com/macros/s/AKfycbxyPQlVcKZUN17tCdhN2YItqgHjXXUlnOn7HQUh5q8WzTM1Gb6-ZE9DJpSm7k0q6x9IxQ/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbw89zLqxNVijt6yPBqykCzMe7vZVDqdnP6NDcG1ifc7vV2x1GnzHz6oRnO9B2Dpfk_3pg/exec", {
         method: "POST",
         body: JSON.stringify(data)
     })
@@ -93,6 +93,7 @@ document.getElementById("memberForm").addEventListener("submit", function(e) {
         document.getElementById("statusMessage").style.color = "red";
     });
 });
+
 
 
 
