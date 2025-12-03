@@ -63,34 +63,50 @@ document.addEventListener('DOMContentLoaded', () => {
     images.forEach(img => imgObserver.observe(img));
   }
 });
-document.getElementById("memberForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+document.getElementById("memberForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
 
-  const data = {
-    ad_soyad: document.getElementById("name").value,
-    telefon: document.getElementById("phone").value,
-    ogrenci_no: document.getElementById("student").value,
-    email: document.getElementById("email").value
-  };
+    const ad_soyad = document.getElementById("name").value;
+    const telefon = document.getElementById("phone").value;
+    const ogrenci_no = document.getElementById("student").value;
+    const email = document.getElementById("email").value;
 
-  const response = await fetch(
-    "https://script.google.com/macros/s/AKfycbybUjRTN2rnbVKB237ucv3byULbIK6OGDnQ-6Ig9KPKrsNzZjGaioUV02ePoOqErrxS2Q/exec",
-    {
-      method: "POST",
-      mode: "cors",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
+    const status = document.getElementById("statusMessage");
+
+    const url = "https://script.google.com/macros/s/AKfycbxbUjRTN2rnbVKB237ucv3DyULblK6OGDnO-6Ig9KPkr5NzZjGaioUV02PeOqErrxS20/exec";
+
+    status.textContent = "Gönderiliyor...";
+
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                ad_soyad,
+                telefon,
+                email,
+                ogrenci_no
+            })
+        });
+
+        const result = await response.json();
+
+        if (result.status === "OK") {
+            status.textContent = "Başvuru başarılı! Bilgiler kaydedildi.";
+            document.getElementById("memberForm").reset();
+        } else {
+            status.textContent = "Bir hata oluştu.";
+        }
+
+    } catch (error) {
+        status.textContent = "Bağlantı hatası. Lütfen tekrar deneyin.";
+        console.error(error);
     }
-  );
-
-  const result = await response.json();
-
-  if (result.status === "OK") {
-    alert("Form başarıyla gönderildi!");
-  } else {
-    alert("Bir hata oluştu!");
-  }
 });
+
+
 
 
 
