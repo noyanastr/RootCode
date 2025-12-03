@@ -71,7 +71,7 @@ document.getElementById("memberForm").addEventListener("submit", function(e) {
     const email = document.getElementById("email").value;
     const ogrenci_no = document.getElementById("student").value;
 
-    const url = "https://script.google.com/macros/s/AKfycbzHDE1EAb48SGaz9Z_MQTR4Ca2FCDOJe_4wuK9xYUHgGgTXpsLQLjGMBraZSoGE5-1vFA/exec";
+    const url = "https://script.google.com/macros/s/AKfycbzHDE1AEb48SGaz9Z_MQTR4Ca2FCDOJe_4wuK9xYUGhGgTXpsLQLjGMBrAZSoGE5-1vFA/exec";
 
     const params = new URLSearchParams({
         ad_soyad: ad_soyad,
@@ -93,6 +93,7 @@ document.getElementById("memberForm").addEventListener("submit", function(e) {
         });
 
 });
+
 
 
 
