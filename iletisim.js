@@ -71,9 +71,8 @@ document.getElementById("memberForm").addEventListener("submit", function(e) {
     const email = document.getElementById("email").value;
     const ogrenci_no = document.getElementById("student").value;
 
-    const url = "https://script.google.com/macros/s/AKfycbzHDE1AEb48SGaz9Z_MQTR4Ca2FCDOJe_4wuK9xYUGhGgTXpsLQLjGMBrAZSoGE5-1vFA/exec";
+    const url = "https://script.google.com/macros/s/AKfycbzHDE1EAb48SGaz9Z_MQTR4Ca2FCDOJe_4wuK9xYUHgGgTXpsLQLjGMBraZSoGE5-1vFA/exec";
 
-    // GET parametrelerine çeviriyoruz
     const params = new URLSearchParams({
         ad_soyad: ad_soyad,
         telefon: telefon,
@@ -81,10 +80,8 @@ document.getElementById("memberForm").addEventListener("submit", function(e) {
         ogrenci_no: ogrenci_no
     });
 
-    fetch(`${url}?${params.toString()}`)
-        .then(r => r.text())
-        .then(txt => {
-            console.log("Response:", txt);
+    fetch(`${url}?${params.toString()}`, { method: "GET", mode: "no-cors" })
+        .then(() => {
             alert("Başarılı! Form verileri Google Sheets'e kaydedildi.");
             document.getElementById("memberForm").reset();
         })
@@ -94,6 +91,7 @@ document.getElementById("memberForm").addEventListener("submit", function(e) {
         });
 
 });
+
 
 
 
