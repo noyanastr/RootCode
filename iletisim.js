@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     images.forEach(img => imgObserver.observe(img));
   }
 });
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyxsjUaf1lNwGL02kdgj-MfEdVO_iw51p0wA6hXtahk4XlTk8Cff7khwSa9V_kXyxLw0g/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxysjUaf1lNwGL02kdgj-MfEdVO_iw51p0wA6hXtahk4XITk8Cff7khwSa9V_kXyxLw0g/exec";
 
 document.getElementById("memberForm").addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -97,6 +97,7 @@ document.getElementById("memberForm").addEventListener("submit", async (e) => {
     document.getElementById("statusMessage").textContent = "Bağlantı hatası!";
   }
 });
+
 
 
 
