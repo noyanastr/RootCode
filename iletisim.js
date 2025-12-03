@@ -69,8 +69,8 @@ document.getElementById("memberForm").addEventListener("submit", async (e) => {
   const data = {
     ad_soyad: document.getElementById("name").value,
     telefon: document.getElementById("phone").value,
-    email: document.getElementById("email").value,
-    ogrenci_no: document.getElementById("student").value
+    ogrenci_no: document.getElementById("student").value,
+    email: document.getElementById("email").value
   };
 
   const response = await fetch(
@@ -91,6 +91,7 @@ document.getElementById("memberForm").addEventListener("submit", async (e) => {
     alert("Bir hata oluştu!");
   }
 });
+
 
 
 
