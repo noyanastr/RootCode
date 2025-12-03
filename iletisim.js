@@ -67,10 +67,10 @@ document.getElementById("memberForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const data = {
-    ad_soyad: document.getElementById("ad_soyad").value,
-    telefon: document.getElementById("telefon").value,
+    ad_soyad: document.getElementById("name").value,
+    telefon: document.getElementById("phone").value,
     email: document.getElementById("email").value,
-    ogrenci_no: document.getElementById("ogrenci_no").value
+    ogrenci_no: document.getElementById("student").value
   };
 
   const response = await fetch(
@@ -91,6 +91,7 @@ document.getElementById("memberForm").addEventListener("submit", async (e) => {
     alert("Bir hata oluştu!");
   }
 });
+
 
 
 
