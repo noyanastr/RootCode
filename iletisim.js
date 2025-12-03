@@ -63,23 +63,31 @@ document.addEventListener('DOMContentLoaded', () => {
     images.forEach(img => imgObserver.observe(img));
   }
 });
-document.getElementById("form").addEventListener("submit", function(e) {
-  e.preventDefault();
+document.getElementById("memberForm").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  const url = "https://script.google.com/macros/s/AKfycbxfvo03E-LqaK0-nXNoR1UMzAi9KsljYyjqGZ6i3eFTxQCOnqMJHtHgPH5TbnNlf7X_lA/exec";
+    const url = "https://script.google.com/macros/s/AKfycbyxsjUaf1lNwGL02kdgj-MfEdVO_iw51p0wA6hXtahk4XlTk8Cff7khwSa9V_kXyxLw0g/exec";
 
-  const formData = new FormData(this);
+    const formData = new FormData();
+    formData.append("ad_soyad", document.getElementById("name").value);
+    formData.append("telefon", document.getElementById("phone").value);
+    formData.append("ogrenci_no", document.getElementById("student").value);
+    formData.append("email", document.getElementById("email").value);
 
-  fetch(url, {
-    method: "POST",
-    body: formData   //❗ headers yok, JSON yok → CORS YOK!
-  })
-  .then(r => r.text())
-  .then(r => {
-    alert("Gönderildi: " + r);
-  })
-  .catch(err => alert("Hata: " + err));
+    fetch(url, {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.text())
+    .then(res => {
+        document.getElementById("statusMessage").innerText = "Başvurunuz başarıyla iletildi.";
+    })
+    .catch(err => {
+        document.getElementById("statusMessage").innerText = "Hata oluştu: " + err;
+    });
 });
+// deneme001
+
 
 
 
