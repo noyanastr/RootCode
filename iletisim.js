@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     images.forEach(img => imgObserver.observe(img));
   }
 });
-document.getElementById("uyeFormu").addEventListener("submit", async (e) => {
+document.getElementById("memberForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const data = {
@@ -91,6 +91,7 @@ document.getElementById("uyeFormu").addEventListener("submit", async (e) => {
     alert("Bir hata oluştu!");
   }
 });
+
 
 
 
