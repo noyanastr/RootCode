@@ -63,36 +63,35 @@ document.addEventListener('DOMContentLoaded', () => {
     images.forEach(img => imgObserver.observe(img));
   }
 });
-document.getElementById("memberForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+document.getElementById("uyeFormu").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-    const ad_soyad = document.getElementById("name").value;
-    const telefon = document.getElementById("phone").value;
-    const email = document.getElementById("email").value;
-    const ogrenci_no = document.getElementById("student").value;
+  const data = {
+    ad_soyad: document.getElementById("ad_soyad").value,
+    telefon: document.getElementById("telefon").value,
+    email: document.getElementById("email").value,
+    ogrenci_no: document.getElementById("ogrenci_no").value
+  };
 
-    const url = "https://script.google.com/macros/s/AKfycbzHDE1AEb48SGaz9Z_MQTR4Ca2FCDOJe_4wuK9xYUGhGgTXpsLQLjGMBrAZSoGE5-1vFA/exec";
+  const response = await fetch(
+    "https://script.google.com/macros/s/AKfycbybUjRTN2rnbVKB237ucv3byULbIK6OGDnQ-6Ig9KPKrsNzZjGaioUV02ePoOqErrxS2Q/exec",
+    {
+      method: "POST",
+      mode: "cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    }
+  );
 
-    const params = new URLSearchParams({
-        ad_soyad: ad_soyad,
-        telefon: telefon,
-        email: email,
-        ogrenci_no: ogrenci_no
-    });
+  const result = await response.json();
 
-    fetch(`${url}?${params.toString()}`)
-        .then(r => r.text())
-        .then(txt => {
-            console.log("Response:", txt);
-            alert("Başarılı! Form verileri Google Sheets'e kaydedildi.");
-            document.getElementById("memberForm").reset();
-        })
-        .catch(err => {
-            console.error("Fetch error:", err);
-            alert("Bir hata oluştu. Lütfen tekrar deneyin.");
-        });
-
+  if (result.status === "OK") {
+    alert("Form başarıyla gönderildi!");
+  } else {
+    alert("Bir hata oluştu!");
+  }
 });
+
 
 
 
