@@ -73,7 +73,7 @@ document.getElementById("memberForm").addEventListener("submit", async function(
 
     const status = document.getElementById("statusMessage");
 
-    const url = "https://script.google.com/macros/s/AKfycbybUjRTN2rnbVKB237ucv3byULbIK6OGDnQ-6Ig9KPKrsNzZjGaioUV02ePoOqErrxS2Q/exec";
+    const url = "https://script.google.com/macros/s/AKfycbyxsjUaf1lNwGL02kdgj-MfEdVO_iw51p0wA6hXtahk4XlTk8Cff7khwSa9V_kXyxLw0g/exec";
 
     status.textContent = "Gönderiliyor...";
 
@@ -105,6 +105,7 @@ document.getElementById("memberForm").addEventListener("submit", async function(
         console.error(error);
     }
 });
+
 
 
 
