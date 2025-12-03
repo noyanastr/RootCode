@@ -82,11 +82,10 @@ document.getElementById("memberForm").addEventListener("submit", function (e) {
     .then(res => {
         document.getElementById("statusMessage").innerText = "Başvurunuz başarıyla iletildi.";
     })
-    .catch(err => {
-        document.getElementById("statusMessage").innerText = "Hata oluştu: " + err;
-    });
+   //////
 });
 // deneme001
+
 
 
 
