@@ -80,8 +80,10 @@ document.getElementById("memberForm").addEventListener("submit", function(e) {
         ogrenci_no: ogrenci_no
     });
 
-    fetch(`${url}?${params.toString()}`, { method: "GET", mode: "no-cors" })
-        .then(() => {
+    fetch(`${url}?${params.toString()}`)
+        .then(r => r.text())
+        .then(txt => {
+            console.log("Response:", txt);
             alert("Başarılı! Form verileri Google Sheets'e kaydedildi.");
             document.getElementById("memberForm").reset();
         })
@@ -91,6 +93,8 @@ document.getElementById("memberForm").addEventListener("submit", function(e) {
         });
 
 });
+
+
 
 
 
