@@ -63,42 +63,41 @@ document.addEventListener('DOMContentLoaded', () => {
     images.forEach(img => imgObserver.observe(img));
   }
 });
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxysjUaf1lNwGL02kdgj-MfEdVO_iw51p0wA6hXtahk4XITk8Cff7khwSa9V_kXyxLw0g/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxfvo03E-LqaK0-nXNoR1UMzAi9KsljYyjqGZ6i3eFTxQCOnqMJHtHgPH5TbnNlf7X_lA/exec"; // örn: https://script.google.com/macros/s/AKfy.../exec
 
-document.getElementById("memberForm").addEventListener("submit", async (e) => {
+document.getElementById("memberForm").addEventListener("submit", function(e) {
   e.preventDefault();
+  const status = document.getElementById("statusMessage");
+  status.textContent = "Gönderiliyor...";
 
-  const data = {
-    ad_soyad: document.getElementById("name").value,
-    telefon: document.getElementById("phone").value,
-    email: document.getElementById("email").value,
-    ogrenci_no: document.getElementById("student").value
-  };
+  const fd = new FormData();
+  fd.append("ad_soyad", document.getElementById("name").value);
+  fd.append("telefon", document.getElementById("phone").value);
+  fd.append("email", document.getElementById("email").value);
+  fd.append("ogrenci_no", document.getElementById("student").value);
 
-  try {
-    const res = await fetch(SCRIPT_URL, {
-      method: "POST",
-      mode: "cors",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-
-    const result = await res.json();
-    console.log(result);
-
-    if (result.status === "OK") {
-      document.getElementById("statusMessage").textContent = "Başvuru başarıyla gönderildi!";
+  fetch(SCRIPT_URL, {
+    method: "POST",
+    body: fd  // <-- FormData, Content-Type tarayıcı tarafından otomatik ayarlanır
+  })
+  .then(response => response.text())
+  .then(text => {
+    // Script "OK" dönecekse:
+    if (text && text.indexOf("OK") !== -1) {
+      status.style.color = "green";
+      status.textContent = "Başarıyla gönderildi!";
+      document.getElementById("memberForm").reset();
     } else {
-      document.getElementById("statusMessage").textContent = "Hata oluştu!";
+      status.style.color = "red";
+      status.textContent = "Sunucu hatası: " + text;
     }
-
-  } catch (err) {
-    console.error(err);
-    document.getElementById("statusMessage").textContent = "Bağlantı hatası!";
-  }
+  })
+  .catch(err => {
+    console.error("Fetch error:", err);
+    status.style.color = "red";
+    status.textContent = "Bağlantı hatası. Konsolu kontrol et.";
+  });
 });
-
-
 
 
 
