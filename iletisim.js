@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById("memberForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const url = "https://script.google.com/macros/s/AKfycbxfvo03E-LqaK0-nXNoR1UMzAi9KsljYyjqGZ6i3eFTxQCOnqMJHtHgPH5TbnNlf7X_lA/exec";
+    const url = "https://script.google.com/macros/s/AKfycbxcyBNx-OgTJPvX4DT59mzCTq7cFA1o692t-9P1ktwm_6PvwfA9_-_btIiQAI8mCNazAg/exec";
 
     const formData = new FormData();
     formData.append("ad_soyad", document.getElementById("name").value);
@@ -87,6 +87,7 @@ document.getElementById("memberForm").addEventListener("submit", function (e) {
     });
 });
 // deneme001
+
 
 
 
