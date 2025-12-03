@@ -63,48 +63,42 @@ document.addEventListener('DOMContentLoaded', () => {
     images.forEach(img => imgObserver.observe(img));
   }
 });
-document.getElementById("memberForm").addEventListener("submit", async function(e) {
-    e.preventDefault();
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyxsjUaf1lNwGL02kdgj-MfEdVO_iw51p0wA6hXtahk4XlTk8Cff7khwSa9V_kXyxLw0g/exec";
 
-    const ad_soyad = document.getElementById("name").value;
-    const telefon = document.getElementById("phone").value;
-    const ogrenci_no = document.getElementById("student").value;
-    const email = document.getElementById("email").value;
+document.getElementById("memberForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-    const status = document.getElementById("statusMessage");
+  const data = {
+    ad_soyad: document.getElementById("name").value,
+    telefon: document.getElementById("phone").value,
+    email: document.getElementById("email").value,
+    ogrenci_no: document.getElementById("student").value
+  };
 
-    const url = "https://script.google.com/macros/s/AKfycbyxsjUaf1lNwGL02kdgj-MfEdVO_iw51p0wA6hXtahk4XlTk8Cff7khwSa9V_kXyxLw0g/exec";
+  try {
+    const res = await fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
 
-    status.textContent = "Gönderiliyor...";
+    const result = await res.json();
+    console.log(result);
 
-    try {
-        const response = await fetch(url, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                ad_soyad,
-                telefon,
-                email,
-                ogrenci_no
-            })
-        });
-
-        const result = await response.json();
-
-        if (result.status === "OK") {
-            status.textContent = "Başvuru başarılı! Bilgiler kaydedildi.";
-            document.getElementById("memberForm").reset();
-        } else {
-            status.textContent = "Bir hata oluştu.";
-        }
-
-    } catch (error) {
-        status.textContent = "Bağlantı hatası. Lütfen tekrar deneyin.";
-        console.error(error);
+    if (result.status === "OK") {
+      document.getElementById("statusMessage").textContent = "Başvuru başarıyla gönderildi!";
+    } else {
+      document.getElementById("statusMessage").textContent = "Hata oluştu!";
     }
+
+  } catch (err) {
+    console.error(err);
+    document.getElementById("statusMessage").textContent = "Bağlantı hatası!";
+  }
 });
+
+
 
 
 
