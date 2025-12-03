@@ -71,7 +71,7 @@ document.getElementById("memberForm").addEventListener("submit", function(e) {
     const email = document.getElementById("email").value;
     const ogrenci_no = document.getElementById("student").value;
 
-    const url = "https://script.google.com/macros/s/AKfycbw89zLqxNVijt6yPBqykCzMe7vZVDqdnP6NDcG1ifc7vV2x1GnzHz6oRnO9B2Dpfk_3pg/exec";
+    const url = "https://script.google.com/macros/s/AKfycbxhkEWPIWSA1PXt_xZ6F9aqlMgWdlRwBjshhpbZtumNd7ofx-j68piylDIkQNIE_Mydyg/exec";
 
     // GET parametrelerine çeviriyoruz
     const params = new URLSearchParams({
@@ -94,6 +94,7 @@ document.getElementById("memberForm").addEventListener("submit", function(e) {
         });
 
 });
+
 
 
 
