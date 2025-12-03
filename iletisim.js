@@ -66,23 +66,36 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById("memberForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const data = {
-        ad_soyad: document.getElementById("name").value,
-        telefon: document.getElementById("phone").value,
-        email: document.getElementById("email").value,
-        ogrenci_no: document.getElementById("student").value
-    };
+    const ad_soyad = document.getElementById("name").value;
+    const telefon = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+    const ogrenci_no = document.getElementById("student").value;
 
-    fetch("https://script.google.com/macros/s/AKfycbw89zLqxNVijt6yPBqykCzMe7vZVDqdnP6NDcG1ifc7vV2x1GnzHz6oRnO9B2Dpfk_3pg/exec", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(data)
-})
-.then(r => r.text())
-.then(txt => console.log("Response:", txt))
-.catch(err => console.error("Fetch error:", err));
+    const url = "https://script.google.com/macros/s/AKfycbw89zLqxNVijt6yPBqykCzMe7vZVDqdnP6NDcG1ifc7vV2x1GnzHz6oRnO9B2Dpfk_3pg/exec";
+
+    // GET parametrelerine çeviriyoruz
+    const params = new URLSearchParams({
+        ad_soyad: ad_soyad,
+        telefon: telefon,
+        email: email,
+        ogrenci_no: ogrenci_no
+    });
+
+    fetch(`${url}?${params.toString()}`)
+        .then(r => r.text())
+        .then(txt => {
+            console.log("Response:", txt);
+            alert("Başarılı! Form verileri Google Sheets'e kaydedildi.");
+            document.getElementById("memberForm").reset();
+        })
+        .catch(err => {
+            console.error("Fetch error:", err);
+            alert("Bir hata oluştu. Lütfen tekrar deneyin.");
+        });
 
 });
+
+
 
 
 
