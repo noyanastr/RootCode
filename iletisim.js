@@ -63,40 +63,22 @@ document.addEventListener('DOMContentLoaded', () => {
     images.forEach(img => imgObserver.observe(img));
   }
 });
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxfvo03E-LqaK0-nXNoR1UMzAi9KsljYyjqGZ6i3eFTxQCOnqMJHtHgPH5TbnNlf7X_lA/exec"; // örn: https://script.google.com/macros/s/AKfy.../exec
-
-document.getElementById("memberForm").addEventListener("submit", function(e) {
+document.getElementById("form").addEventListener("submit", function(e) {
   e.preventDefault();
-  const status = document.getElementById("statusMessage");
-  status.textContent = "Gönderiliyor...";
 
-  const fd = new FormData();
-  fd.append("ad_soyad", document.getElementById("name").value);
-  fd.append("telefon", document.getElementById("phone").value);
-  fd.append("email", document.getElementById("email").value);
-  fd.append("ogrenci_no", document.getElementById("student").value);
+  const url = "https://script.google.com/macros/s/AKfycbxfvo03E-LqaK0-nXNoR1UMzAi9KsljYyjqGZ6i3eFTxQCOnqMJHtHgPH5TbnNlf7X_lA/exec";
 
-  fetch(SCRIPT_URL, {
+  const formData = new FormData(this);
+
+  fetch(url, {
     method: "POST",
-    body: fd  // <-- FormData, Content-Type tarayıcı tarafından otomatik ayarlanır
+    body: formData   //❗ headers yok, JSON yok → CORS YOK!
   })
-  .then(response => response.text())
-  .then(text => {
-    // Script "OK" dönecekse:
-    if (text && text.indexOf("OK") !== -1) {
-      status.style.color = "green";
-      status.textContent = "Başarıyla gönderildi!";
-      document.getElementById("memberForm").reset();
-    } else {
-      status.style.color = "red";
-      status.textContent = "Sunucu hatası: " + text;
-    }
+  .then(r => r.text())
+  .then(r => {
+    alert("Gönderildi: " + r);
   })
-  .catch(err => {
-    console.error("Fetch error:", err);
-    status.style.color = "red";
-    status.textContent = "Bağlantı hatası. Konsolu kontrol et.";
-  });
+  .catch(err => alert("Hata: " + err));
 });
 
 
