@@ -3,17 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
   padding: 0;
-  background-image: url("arkaplanolucak.png"); /* resmin dosya adı */
-  background-size: cover;        /* ekranı tam kapla */
-  background-repeat: no-repeat;  /* tekrar etme */
-  background-position: center;   /* ortala */
-  background-attachment: fixed;  /* kaydırınca sabit kalsın */
+  background-image: url("arkaplanolucak.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   font-family: Arial, sans-serif;
-  
   text-align: center;
 }
 .fade-in-paragraph {
@@ -23,7 +21,6 @@ body {
   transition: opacity 0.9s ease-out, transform 0.9s ease-out, filter 0.9s ease-out;
   will-change: opacity, transform, filter;
 }
-
 .fade-in-paragraph.visible {
   opacity: 1;
   transform: translateY(0);
@@ -34,37 +31,29 @@ body {
   width: 30%;
   padding-top: 30px;
 }
-
 #takımlar {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 30%;
 }
-
 .ust p {
   font-size: 90px;
   font-family: fantasy;
   text-align: center;
   letter-spacing: 5px;
-  
 }
-
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2.5rem 6rem;
   background-color: #00000078;
-  
   position: sticky;
   top: 0;
   z-index: 10;
-
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-
 }
-
 .logo {
   font-size: 25px;
   font-weight: bold;
@@ -72,7 +61,6 @@ body {
   position: relative;
   padding: 12px;
 }
-
 .nav-links a {
   margin-left: 3rem;
   text-decoration: none;
@@ -81,11 +69,9 @@ body {
   transition: color 0.3s ease;
   font-weight: 500;
 }
-
 .nav-links a:hover {
   color: #2e7d32;
 }
-
 .menu-icon {
   display: none;
   flex-direction: column;
@@ -96,14 +82,12 @@ body {
   right: 5%;
   padding: 20px;
 }
-
 .menu-icon span {
   height: 3px;
   width: 25px;
   background: #00aab3;
   transition: all 0.3s ease;
 }
-
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -120,11 +104,9 @@ body {
   transition: right 1.0s ease;
   z-index: 20;
 }
-
 .mobile-menu.active {
   right: 0;
 }
-
 .mobile-menu a {
   text-decoration: none;
   color: #ffffff;
@@ -133,38 +115,29 @@ body {
   font-weight: 450;
   text-align: left;
 }
-
 .mobile-menu a:hover {
   color: #1dd594fe;
 }
-
 .close-btn {
   font-size: 3rem;
   align-self: flex-end;
   cursor: pointer;
   color: #00aab3;
 }
-
 .navbar img {
   width: 85px;
   left: 3%;
   position: absolute;
 }
-
 .container-1 {
   display: block;
-
   align-items: center;
   justify-content: center;
   gap: 20px;
-  /* Resim ve yazı arası boşluk */
   padding-top: 0px;
   padding: px;
   flex-wrap: wrap;
-  /* Küçük ekranlarda alt alta geçsin */
-
 }
-
 .container-1 p {
   width: 45%;
   min-width: 300px;
@@ -174,12 +147,9 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-
 }
-
 .container-1 img {
   width: 25%;
-
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -187,7 +157,6 @@ body {
   border-radius: 20px;
   align-items: center;
 }
-
 .container-2 {
   display: flex;
   align-items: center;
@@ -195,9 +164,7 @@ body {
   gap: 20px;
   padding: 40px;
   flex-wrap: wrap;
-
 }
-
 .container-2 p {
   width: 45%;
   min-width: 300px;
@@ -207,13 +174,11 @@ body {
   line-height: 25px;
   font-size: 20px;
 }
-
 .container-2 img {
   width: 45%;
   min-width: 300px;
   border-radius: 20px;
 }
-
 .container-1 a {
   text-decoration: none;
   color: #d3d3d3;
@@ -221,7 +186,6 @@ body {
   font-size: 30px;
   cursor:default;
 }
-
 .container-2 a {
   text-decoration: none;
   color: #d3d3d3;
@@ -229,17 +193,14 @@ body {
   font-size: 30px;
   cursor: default;
 }
-
 .ust img {
   width: 100%;
 }
-
 footer {
   background-color: #282828;
   color: #fff;
   padding: 40px 20px;
 }
-
 .footer-container {
   max-width: 1200px;
   margin: auto;
@@ -247,47 +208,38 @@ footer {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
 .footer-section {
   flex: 1 1 200px;
   margin: 20px;
   text-align: left;
 }
-
 .footer-section h3 {
   margin-bottom: 15px;
 }
-
 .footer-section ul {
   list-style: none;
   padding: 0;
 }
-
 .footer-section ul li {
   margin: 10px 0;
 }
-
 .footer-section ul li a {
   color: #ccc;
   text-decoration: none;
   transition: color 0.3s;
 }
-
 .footer-section ul li a:hover {
   color: #fff;
 }
-
 .footer-social a {
   color: #ccc;
   margin-right: 15px;
   font-size: 20px;
   transition: color 0.3s;
 }
-
 .footer-social a:hover {
   color: #fff;
 }
-
 .footer-bottom {
   text-align: justify;
   padding-top: 20px;
@@ -295,37 +247,29 @@ footer {
   color: #aaa;
   font-size: 14px;
 }
-
 @media (max-width: 768px) {
   .nav-links {
     display: none;
   }
-
   .menu-icon {
     display: flex;
   }
-
   .navbar img {
     width: 90px;
     left: 2.7%;
     position: absolute;
-
   }
-
   #ustust {
     opacity: 0%;
   }
-
   #ikiust {
     opacity: 100%;
     position: relative;
     width: 100%;
   }
-
   .container-1 {
     flex-direction: column;
     text-align: center;
-    
   }
   .container-1 a{
     cursor: default;
@@ -335,52 +279,40 @@ footer {
     width: 90%;
     font-size: 17px;
   }
-
   .container-1 img {
     width: 60%;
     min-width: 300px;
     border-radius: 20px;
-    
   }
-
-  /**/
   .container-2 {
     flex-direction: column;
     padding-top: 25px;
   }
-
   .container-2 p {
     padding-left: 0;
     width: 90%;
     font-size: 17px;
   }
-
   .container-2 img {
     width: 100%;
     min-width: 300px;
     gap: 20px;
     border-radius: 20px;
   }
-
   .container-2 a {
    text-align: left;
    cursor: default;
   }
-
   .footer-container {
     flex-direction: column;
     align-items: center;
   }
-
   .footer-section {
     margin: 20px 0;
   }
-
-
   #takımlar {
     width: 70%;
   }
-  
   #ctfüst{
     order: -1;
     border-radius: 5px;
@@ -392,38 +324,28 @@ footer {
   #yapayzekakenar{
     border-radius: 5px;
   }
-
 }
-
 .fade-in-section {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1s ease-out, transform 1s ease-out;
   will-change: opacity, transform;
-  
 }
-
 .fade-in-section.visible {
   opacity: 1;
   transform: none;
 }
-
 p {
   color: white;
 }
-
 .container-3 {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  /* Resim ve yazı arası boşluk */
   padding: 40px;
   flex-wrap: wrap;
-  /* Küçük ekranlarda alt alta geçsin */
-
 }
-
 .container-3 p {
   width: 45%;
   min-width: 300px;
@@ -431,17 +353,14 @@ p {
   text-align: justify;
   font-size: 20px;
 }
-
 .container-3 img {
   width: 45%;
   min-width: 300px;
   border-radius: 20px;
 }
-
 .container-3 a {
   text-decoration: none;
   color: #0071f2;
   font-weight: 550;
   font-size: 30px;
-
 }
