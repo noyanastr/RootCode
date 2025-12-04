@@ -3,6 +3,3 @@ Allow: /
 
 Sitemap: https://rootcodetechnology.com/sitemap.xml
 Host: https://rootcodetechnology.com
-
-
-
